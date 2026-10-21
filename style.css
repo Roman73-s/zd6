@@ -1,0 +1,115 @@
+/*Цвета и тема (Bootstrap отвечает за структуру)*/
+
+body {
+  background: #1e1e1e;
+  color: #dcdcdc;
+}
+
+/* Шапка */
+.site-header {
+  background: #7a1f1f;
+  color: #f0f0f0;
+}
+
+.site-header h1 {
+  color: #f0f0f0;
+  font-size: 22px;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #f0f0f0;
+}
+
+.nav-link {
+  color: #f0f0f0 !important;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: #ffb3b3 !important;
+}
+
+/* Блоки контента */
+.block {
+  background: #2a2a2a;
+  padding: 15px;
+  border: 1px solid #3a3a3a;
+}
+
+.block h2 {
+  color: #f0f0f0;
+}
+
+/* Ссылки в списке */
+.links-list a {
+  color: #e0a0a0;
+  text-decoration: none;
+}
+
+.links-list a:hover {
+  color: #ffb3b3;
+  text-decoration: underline;
+}
+
+/* Таблица */
+.data-table {
+  color: #dcdcdc;
+}
+
+.data-table th {
+  background: #7a1f1f !important;
+  color: #f0f0f0 !important;
+  border-color: #444 !important;
+}
+
+.data-table td {
+  border-color: #444 !important;
+}
+
+.data-table tr:nth-child(even) {
+  background: #2a2a2a;
+}
+
+.data-table tr:nth-child(odd) {
+  background: #232323;
+}
+
+/* Форма */
+.form-control {
+  background: #1a1a1a;
+  color: #dcdcdc;
+  border: 1px solid #555;
+}
+
+.form-control:focus {
+  background: #1a1a1a;
+  color: #dcdcdc;
+  border-color: #a02a2a;
+  box-shadow: 0 0 0 0.2rem rgba(160, 42, 42, 0.4);
+}
+
+.form-check-label {
+  color: #dcdcdc;
+}
+
+/* Подвал */
+.site-footer {
+  background: #141414;
+  color: #b0b0b0;
+}
+
+/* Карта ссылок*/
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.map-img {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  display: block;
+}
