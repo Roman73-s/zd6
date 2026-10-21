@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ARTEX — Калькулятор (ЛР6)</title>
+  <title>ARTEX — Калькулятор имплантов (ЛР6)</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
@@ -15,7 +15,7 @@
   <header class="site-header">
     <div class="container">
       <div class="row align-items-center py-3">
-        <div class="col-12 col-md-6 text-center text-md-left mb-3 mb-md-0">
+        <div class="col-12 text-center text-md-left">
           <a href="#" class="logo-link d-inline-block align-middle mr-2">
             <img src="logo.png" alt="Логотип" class="logo">
           </a>
@@ -29,55 +29,54 @@
     <div class="row justify-content-center">
       <div class="col-12 col-md-8 col-lg-6">
         <section id="calc" class="block mt-4">
-          <h2>Калькулятор стоимости услуги</h2>
+          <h2>Терминал заказа имплантов</h2>
 
           <form id="calc-form" class="mt-3">
             
-            <!-- Радиокнопки (Типы услуг) -->
             <div class="form-group">
-              <label class="d-block font-weight-bold">Тип услуги:</label>
+              <label class="d-block font-weight-bold text-danger">Выберите класс кибер-импланта:</label>
+              
               <div class="form-check">
-                <input type="radio" name="serviceType" value="type1" id="type1" class="form-check-input" checked>
-                <label for="type1" class="form-check-label">Базовая (без опций) — 1000 ₽</label>
+                <input type="radio" name="serviceType" value="optics" id="type1" class="form-check-input" checked>
+                <label for="type1" class="form-check-label">Кироши Оптикс (Оптика) — 10 000 €$</label>
               </div>
+              
               <div class="form-check">
-                <input type="radio" name="serviceType" value="type2" id="type2" class="form-check-input">
-                <label for="type2" class="form-check-label">С опциями — 2000 ₽</label>
+                <input type="radio" name="serviceType" value="deck" id="type2" class="form-check-input">
+                <label for="type2" class="form-check-label">Кибердек (Нейроинтерфейс) — 20 000 €$</label>
               </div>
+              
               <div class="form-check">
-                <input type="radio" name="serviceType" value="type3" id="type3" class="form-check-input">
-                <label for="type3" class="form-check-label">С дополнительным свойством — 3000 ₽</label>
+                <input type="radio" name="serviceType" value="arms" id="type3" class="form-check-input">
+                <label for="type3" class="form-check-label">Горилла Армс (Руки) — 30 000 €$</label>
               </div>
             </div>
 
-            <!-- Селект (Опции для 2-го типа) -->
             <div class="form-group d-none" id="options-block">
-              <label for="serviceOption">Выберите опцию:</label>
+              <label for="serviceOption">Модификация Кибердека:</label>
               <select id="serviceOption" class="form-control">
-                <option value="0">Без дополнительной опции (+0 ₽)</option>
-                <option value="500">Опция А (+500 ₽)</option>
-                <option value="1000">Опция Б (+1000 ₽)</option>
+                <option value="0">Стандартный чип (+0 €$)</option>
+                <option value="5000">Модуль RAM MK.2 (+5 000 €$)</option>
+                <option value="10000">Модуль RAM MK.3 (+10 000 €$)</option>
               </select>
             </div>
 
-            <!-- Чекбокс (Свойство для 3-го типа) -->
             <div class="form-group d-none" id="property-block">
               <div class="form-check">
                 <input type="checkbox" id="serviceProperty" class="form-check-input">
-                <label for="serviceProperty" class="form-check-label">Дополнительное свойство (+1500 ₽)</label>
+                <label for="serviceProperty" class="form-check-label">Термальный модификатор (+15 000 €$)</label>
               </div>
             </div>
 
-            <!-- Количество -->
             <div class="form-group">
-              <label for="quantity">Количество:</label>
+              <label for="quantity">Количество имплантов:</label>
               <input type="number" id="quantity" class="form-control" value="1" min="1">
             </div>
 
           </form>
 
           <hr style="border-color: #555;">
-          <p id="calc-result" class="font-weight-bold" style="color: #ffb3b3; font-size: 24px;">Итого: 1000 ₽</p>
+          <p id="calc-result" class="font-weight-bold" style="color: #ffb3b3; font-size: 24px;">Итого: 10 000 €$</p>
         </section>
       </div>
     </div>
