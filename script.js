@@ -14,30 +14,29 @@ document.addEventListener('DOMContentLoaded', function () {
     var qty = parseInt(quantityInput.value, 10) || 1;
     var basePrice = 0;
 
-    if (type === 'type1') {
-      basePrice = 1000;
+    if (type === 'optics') {
+      basePrice = 10000;
       optionsBlock.classList.add('d-none');
       propertyBlock.classList.add('d-none');
-    } else if (type === 'type2') {
-      basePrice = 2000;
+    } else if (type === 'deck') {
+      basePrice = 20000;
       var optionPrice = parseInt(serviceOption.value, 10);
       basePrice += optionPrice;
       optionsBlock.classList.remove('d-none');
       propertyBlock.classList.add('d-none');
-    } else if (type === 'type3') {
-      basePrice = 3000;
+    } else if (type === 'arms') {
+      basePrice = 30000;
       if (serviceProperty.checked) {
-        basePrice += 1500;
+        basePrice += 15000;
       }
       optionsBlock.classList.add('d-none');
       propertyBlock.classList.remove('d-none');
     }
 
     var total = basePrice * qty;
-    resultBlock.textContent = 'Итого: ' + total.toLocaleString('ru-RU') + ' ₽';
+    resultBlock.textContent = 'Итого: ' + total.toLocaleString('ru-RU') + ' €$';
   }
 
-  // Слушатели событий
   typeRadios.forEach(function (radio) {
     radio.addEventListener('change', calculate);
   });
