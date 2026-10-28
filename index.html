@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ARTEX — Калькулятор имплантов (ЛР6)</title>
+  <title>ARTEX — Калькулятор имплантов</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
@@ -70,7 +70,8 @@
 
             <div class="form-group">
               <label for="quantity">Количество имплантов:</label>
-              <input type="number" id="quantity" class="form-control" value="1" min="1">
+              <!-- Вот здесь стоит защита от минуса прямо в HTML -->
+              <input type="number" id="quantity" class="form-control" value="1" min="1" oninput="this.value = Math.abs(this.value)">
             </div>
 
           </form>
