@@ -11,7 +11,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function calculate() {
     var type = document.querySelector('input[name="serviceType"]:checked').value;
-    var qty = parseInt(quantityInput.value, 10) || 1;
+    
+    // ИСПРАВЛЕНИЕ: Получаем число и проверяем его
+    var qty = parseInt(quantityInput.value, 10);
+    
+    // Если ввели минус, ноль или буквы, принудительно ставим 1
+    if (isNaN(qty) || qty < 1) {
+      qty = 1;
+      quantityInput.value = 1;
+    }
+
     var basePrice = 0;
 
     if (type === 'optics') {
@@ -37,11 +46,13 @@ document.addEventListener('DOMContentLoaded', function () {
     resultBlock.textContent = 'Итого: ' + total.toLocaleString('ru-RU') + ' €$';
   }
 
+  // Обработчики событий
   typeRadios.forEach(function (radio) {
     radio.addEventListener('change', calculate);
   });
 
   serviceOption.addEventListener('change', calculate);
   serviceProperty.addEventListener('change', calculate);
+  
   quantityInput.addEventListener('input', calculate);
 });
