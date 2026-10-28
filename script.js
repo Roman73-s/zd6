@@ -12,13 +12,13 @@ document.addEventListener('DOMContentLoaded', function () {
   function calculate() {
     var type = document.querySelector('input[name="serviceType"]:checked').value;
     
-    // Получаем количество, берем модуль (на случай если минус проскочил)
-    var qty = Math.abs(parseInt(quantityInput.value, 10));
+    // Берем значение из поля
+    var qty = parseInt(quantityInput.value, 10);
     
-    // Если ввели 0, пустоту или текст - ставим 1
+    // Если поле пустое или меньше 1 (например, стерли), для расчета берем 1
     if (isNaN(qty) || qty < 1) {
       qty = 1;
-      quantityInput.value = 1; 
+      // НЕ пишем 1 обратно в поле, чтобы не мешать пользователю вводить!
     }
 
     var basePrice = 0;
@@ -53,6 +53,13 @@ document.addEventListener('DOMContentLoaded', function () {
   serviceOption.addEventListener('change', calculate);
   serviceProperty.addEventListener('change', calculate);
   
-  // Слушаем любое изменение в поле ввода
-  quantityInput.addEventListener('input', calculate);
+  // Обработка поля ввода
+  quantityInput.addEventListener('input', function() {
+    // Если каким-то образом ввели минус, стираем его на месте
+    if (this.value < 0) {
+      this.value = Math.abs(this.value);
+    }
+    // Пересчитываем
+    calculate();
+  });
 });
