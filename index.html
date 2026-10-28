@@ -70,8 +70,7 @@
 
             <div class="form-group">
               <label for="quantity">Количество имплантов:</label>
-              <!-- Вот здесь стоит защита от минуса прямо в HTML -->
-              <input type="number" id="quantity" class="form-control" value="1" min="1" oninput="this.value = Math.abs(this.value)">
+              <input type="number" id="quantity" class="form-control" value="1" min="1">
             </div>
 
           </form>
