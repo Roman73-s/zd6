@@ -12,13 +12,13 @@ document.addEventListener('DOMContentLoaded', function () {
   function calculate() {
     var type = document.querySelector('input[name="serviceType"]:checked').value;
     
-    // ИСПРАВЛЕНИЕ: Получаем число и проверяем его
-    var qty = parseInt(quantityInput.value, 10);
+    // Получаем количество, берем модуль (на случай если минус проскочил)
+    var qty = Math.abs(parseInt(quantityInput.value, 10));
     
-    // Если ввели минус, ноль или буквы, принудительно ставим 1
+    // Если ввели 0, пустоту или текст - ставим 1
     if (isNaN(qty) || qty < 1) {
       qty = 1;
-      quantityInput.value = 1;
+      quantityInput.value = 1; 
     }
 
     var basePrice = 0;
@@ -46,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function () {
     resultBlock.textContent = 'Итого: ' + total.toLocaleString('ru-RU') + ' €$';
   }
 
-  // Обработчики событий
   typeRadios.forEach(function (radio) {
     radio.addEventListener('change', calculate);
   });
@@ -54,5 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
   serviceOption.addEventListener('change', calculate);
   serviceProperty.addEventListener('change', calculate);
   
+  // Слушаем любое изменение в поле ввода
   quantityInput.addEventListener('input', calculate);
 });
